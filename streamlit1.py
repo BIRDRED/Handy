@@ -31,7 +31,7 @@ def main(cap):
 
             sucess, frame = cap.read()
             if not sucess:
-                break
+            break
 
             # BGR to RGB
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
