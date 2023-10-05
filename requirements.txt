@@ -1,2 +1,10 @@
 opencv-python
-libgl1-mesa-glx
+streamlit
+opencv-python-headless
+textblob
+scipy
+numpy
+pytesseract
+nltk
+pandas
+scikit-learn
