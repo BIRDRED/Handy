@@ -30,8 +30,7 @@ def main(cap):
             min_tracking_confidence=0.5) as hands:
 
             sucess, frame = cap.read()
-            #if not sucess:
-            #    break
+            if not sucess: break
 
             # BGR to RGB
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
