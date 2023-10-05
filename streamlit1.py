@@ -1,4 +1,4 @@
-from streamlit_webrtc import webrtc_streamer
+#from streamlit_webrtc import webrtc_streamer
 import streamlit as st 
 import cv2
 import mediapipe as mp
