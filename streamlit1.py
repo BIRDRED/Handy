@@ -4,6 +4,7 @@ import cv2
 import mediapipe as mp
 import tensorflow as tf
 import numpy as np
+from pathlib import Path
 
 # mediapipe init
 mp_hands = mp.solutions.hands
@@ -63,7 +64,7 @@ def main():
 
     FRAME_WINDOW1 = st.image([])
 
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
 
     run = st.button('Start Web Camera')
     stop = st.button('Stop')
