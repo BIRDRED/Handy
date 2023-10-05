@@ -134,7 +134,7 @@ def main():
                         cv2.rectangle(frame, (x_min, y_min), (x_max, y_max), (0, 255, 0), 2)
 
                         # Display class label
-                        cv2.putText(frame, predicted_class, (x_min, y_min - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                        cv2.putText(frame, predicted_class, (x_min, y_min - 10),label_visibility='collapse', cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
 
                         if predicted_class == 'Offensive':
                             # Gaussian blur 
