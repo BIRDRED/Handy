@@ -12,8 +12,8 @@ mp_drawing = mp.solutions.drawing_utils
 
 # Load the pre-trained gesture classification model
 model = tf.keras.models.load_model('model.h5')  # Substitua pelo caminho para o seu modelo
-run = st.button('Start Web Camera')
-stop = st.button('Stop')
+run = st.button('Start Web Camera',label_visibility=st.session_state.visibility)
+stop = st.button('Stop',label_visibility=st.session_state.visibility)
 
 FRAME_WINDOW1 = st.image([])
 
