@@ -64,7 +64,7 @@ def main():
 
     FRAME_WINDOW1 = st.image([])
 
-    cap = cv2.VideoCapture(2)
+    cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
     run = st.button('Start Web Camera')
     stop = st.button('Stop')
