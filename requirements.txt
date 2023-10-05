@@ -8,3 +8,4 @@ pytesseract
 nltk
 pandas
 scikit-learn
+mediapipe
