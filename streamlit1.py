@@ -1,24 +1,72 @@
-#from streamlit_webrtc import webrtc_streamer
+from streamlit_webrtc import webrtc_streamer
 import streamlit as st 
 import cv2
 import mediapipe as mp
-from keras.models import model_from_json
 import tensorflow as tf
 import numpy as np
 
 # mediapipe init
 mp_hands = mp.solutions.hands
-mp_drawing = mp.solutions.drawing_utils
 
 # Load the pre-trained gesture classification model
 model = tf.keras.models.load_model('model.h5')  # Substitua pelo caminho para o seu modelo
-run = st.button('Start Web Camera')
-stop = st.button('Stop')
 
-FRAME_WINDOW1 = st.image([])
 
-cap = cv2.VideoCapture(0)
-def main(cap):
+
+def main():
+    # html_temp = """
+    # <div style="background-color:#f4f4f4 ;padding:10px;margin:auto">
+    # st.image("1.png")
+    # </div>
+    # """
+    # st.markdown(html_temp, unsafe_allow_html=True)
+    st.image("path1.png")
+
+    st.sidebar.title("Menu")
+    # Add a selectbox to the sidebar:
+    pages=['HANDY']
+    add_pages = st.sidebar.selectbox('', pages)
+
+    st.sidebar.title("Criadores:")
+    html_temp6 = """
+    <ul style="font-weight:bold;">
+    <li>Gabriel Dias</li>
+    <li>Isabelle Melo</li>
+    <li>Lucas Reis </li>
+    <li>Gustavo Melo</li>
+    </ul>
+    """
+    st.sidebar.markdown(html_temp6, unsafe_allow_html=True)
+
+    if add_pages=='HANDY':
+        html_temp2 = """
+    <body style="background-color:#black ;padding:10px;">
+    <h3 style="color:white ;text-align:center;">Sobre</h3>
+    <p style="text-align:justify;">O trabalho visa a implementação de um classificador de gestos ofensivos utilizando a abordagem de aprendizado profundo. Para isso, foi criado um banco de dados de imagens separadas em duas classes: ofensivo e não ofensivo. Este banco de dados alimentou o treinamento dos modelos, respectivamente separados em redes convolucionais [1] e redes pré-treinadas a partir do Xception [2] com dados coloridos e em escala de cinza. Os resultados finais mostram que modelos de aprendizado profundo, principalmente no contexto de imagens,dependem de um grande volume de dados para que a tarefa de compreensão de padrão de dados
+    seja bem sucedida.</p>
+    </body>
+    <div style="background-color:;padding:10px;margin-bottom:10px;">
+    <h4 style="color:white;">Prepared using:</h4>
+    <ul style="color:white;">
+    <li>Deep Learning </li>
+    <li>Processamento de Imagens</li>
+    <li>Transfer Learning </li>
+    <li>Opencv </li>
+    <li>Keras </li>
+    <li>Streamlit </li>
+    <li>PyAutoGui </li>
+
+    </ul>
+    </div>
+"""
+        st.markdown(html_temp2, unsafe_allow_html=True)
+
+    FRAME_WINDOW1 = st.image([])
+
+    cap = cv2.VideoCapture(0)
+
+    run = st.button('Start Web Camera')
+    stop = st.button('Stop')
     with mp_hands.Hands (
             static_image_mode=False,
             max_num_hands=1,
@@ -92,6 +140,7 @@ def main(cap):
                             roi = frame[y_min:y_max, x_min:x_max]
                             roi = cv2.GaussianBlur(roi, (121, 121), 0)
                             frame[y_min:y_max, x_min:x_max] = roi
+                        FRAME_WINDOW1.image(frame)
 
                 # Show resulting image
                 # cv2.imshow('Hand Detection', frame)
@@ -101,7 +150,7 @@ def main(cap):
                     # frame = buffer.tobytes()
                     # yield (b'--frame\r\n'
                     #     b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
-                    FRAME_WINDOW1.image(frame)
+                    
 
                     if stop:
                         break
@@ -114,7 +163,7 @@ def main(cap):
             cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    main(cap)
+    main()
 
 
 
