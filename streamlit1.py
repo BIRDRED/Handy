@@ -19,6 +19,10 @@ FRAME_WINDOW1 = st.image([])
 
 cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 def main(cap):
+    if "visibility" not in st.session_state:
+        st.session_state.visibility = "visible"
+        st.session_state.disabled = False
+
     with mp_hands.Hands (
             static_image_mode=False,
             max_num_hands=1,
