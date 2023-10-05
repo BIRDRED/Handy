@@ -66,8 +66,8 @@ def main():
 
     cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
-    run = st.button('Start Web Camera')
-    stop = st.button('Stop')
+    run = st.button('Start Web Camera',label_visibility='collapsed')
+    stop = st.button('Stop',label_visibility='collapsed')
     with mp_hands.Hands (
             static_image_mode=False,
             max_num_hands=1,
