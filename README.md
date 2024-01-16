@@ -1,4 +1,4 @@
-# HANDY (MÃOZINHA) - Offensive Gesture Detector 👋🚫
+# HANDY (MÃOZINHA) - Offensive Gesture Detector 👋🚫 
 
 **HANDY (MÃOZINHA)** is a tool that utilizes the pretrained **MediaPipe** model to detect the presence of a hand in an image or video. Additionally, it employs another pretrained model (which will be mentioned later) to perform classification and check for an offensive gesture, specifically the middle finger gesture.
 
