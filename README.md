@@ -18,7 +18,7 @@ Follow these simple steps to set up and run HANDY:
 1. **Clone the Repository**
 
    ```shell
-   git clone https://github.com/your-username/handy.git
+   git clone https://github.com/birdred/handy.git
    ```
 
 2. **Install Dependencies**
